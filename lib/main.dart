@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -36,6 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               new Text(
                 'Flutter Firebase seed',
+              ),
+              StreamBuilder(
+                stream: Firestore.instance.collection('settings').snapshots(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) return const Text('Loading..');
+                  return Text(snapshot.data.documents[0]['version']);
+                },
               ),
               MaterialButton(
                 child: Text(

@@ -1,4 +1,4 @@
-package com.example.invest;
+package com.kaushiksundar.flutterseed;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -10,3 +10,8 @@ build/
 
 # IDE files
 .idea/
+
+#Firebase config for Android
+android/app/google-services.json
+#Firebase config for iOS
+ios/Runner/GoogleService-Info.plist
